@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Template || Welcome to my portfolio || Best Portfolio template</title>
+    <link rel="shortcut icon" href="portfolio.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    cursor: none;
+  }
+
+
+
+  body{
+    cursor: none;
+  }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hamburger div:first-child {
+    @apply rotate-45 translate-y-1.5;
+  }
+  .hamburger div:last-child {
+    @apply -rotate-45 -translate-y-1;
+  }
+}
+
+  .cursor-dot{
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0, 110, 236, 0.753);
+  }
+
+  .cursor-outline{
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(0, 110, 236, 0.753);
+  }
+
+  .cursor-dot,
+  .cursor-outline{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 110, 236);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 110, 236, 0.753);
+}
+
+@media (max-width: 1277px) {
+  .msbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 56rem;
+}
+
+
+}
+
+@media (max-width: 1028px) {
+  .scoby{
+   font-size: 0.7rem;
+} 
+}
+
+</style>
+<body class="bg-black text-sky-500 overflow-x-hidden">
+     <div style="transform: translate(-50% , -50%); z-index: 1;" class="cursor-dot w-2 h-2 border-2 border-solid border-sky-500 fixed top-0 left-0 pointer-events-none rounded-full" data-cursor-dot></div>
+    <div style="transform: translate(-50% , -50%); z-index: 1;" class="cursor-outline w-8 h-8 border-2 border-solid border-sky-500 fixed top-0 left-0 pointer-events-none rounded-full" data-cursor-outline></div>
+    <header class="bg-black body-font sticky h-28 flex justify-center items-center">
+      <div style="width: 90rem; border-radius: 2rem;" class="hidden lg:flex container mx-auto flex-wrap p-5 flex-col md:flex-row items-center sticky border-2 border-sky-500">
+        <nav class="sm:text-sm 2xl:text-xl hidden lg:flex md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
+          <a href="../index.html" class="lg mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Home</a>
+          <a href="#about" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">About</a>
+          <a href="#skills" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Skills</a>
+          <a href="#projects" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Projects</a>
+          <a href="#workedwith" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Worked With</a>
+          <a href="#Testimonials" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Testimonials</a>
+          <a href="#contact" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Contact</a>
+          <a href="#links" class="mr-10 sm:text-sm 2xl:text-xl cursor-none text-sky-500 hover:text-cyan-700">Links</a>
+        </nav>
+      </div>
+      <div class="flex items-center justify-end w-4/5 lg:w-0 fixed">
+        <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
+        <label for="hamburger" class="peer-checked:hamburger block z-20 p-6 -mr-6 cursor-pointer lg:hidden fixed">
+          <div aria-hidden="true" class="dfl m-auto h-0.5 w-6 rounded bg-sky-500 transition duration-300"></div>
+          <div aria-hidden="true" class="dslm-auto mt-2 h-0.5 w-6 rounded bg-sky-500 transition duration-300"></div>
+          <div aria-hidden="true" class="dslm-auto mt-2 h-0.5 w-6 rounded bg-sky-500 transition duration-300"></div>
+        </label>
+
+        <div class="peer-checked:translate-x-0 fixed inset-0 w-[calc(100%-4.5rem)] translate-x-[-100%] bg-black border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:hidden">
+          <div class="flex flex-col h-full justify-between lg:items-center lg:flex-row">
+            <ul class="px-6 pt-32 text-sky-500 space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0">
+              <li>
+                <a href="../index.html" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:bg-white">
+                  <span class="relative text-sky-500 hover:text-sky-800">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="#about" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-sky-800">About</span>
+                </a>
+              </li>
+              <li>
+                <a href="#skills" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Skills</span>
+                </a>
+              </li>
+              <li>
+                <a href="#projects" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Projects</span>
+                </a>
+              </li>
+              <li>
+                <a href="#workedwith" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Worked With</span>
+                </a>
+              </li>
+              <li>
+                <a href="#Testimonials" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Testimonials</span>
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Contact</span>
+                </a>
+              </li>
+              <li>
+                <a href="#links" class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                  <span class="relative group-hover:text-cyan-800">Links</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="border-t py-8 px-6 md:px-12 md:py-16 lg:border-t-0 lg:border-l lg:py-0 lg:pr-0 lg:pl-6">
+              <a href="#" class="block px-6 py-3 rounded-full bg-gradient-to-r from-sky-600 to-cyan-400 text-center text-white">
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="bg-black body" id="about">
+      <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <img style="box-shadow: 0px 10px rgb(0, 119, 255); border: 2px solid rgb(0, 119, 255); border-radius: 7rem; width: 90%;" class="person cursor-none object-cover object-center sm:ml-7 md:ml-0 ml-7 " alt="hero" src="../albert-dera-ILip77SbmOE-unsplash.jpg">
+        </div>
+        <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-sky-500">Albet Dera,
+          </h1>
+          <p class="mb-8 leading-relaxed text-cyan-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda itaque dolores voluptatum deleniti quod saepe obcaecati architecto, animi illum vitae, fuga mollitia ullam tempora consequatur cumque. Repudiandae delectus quas reiciendis nemo expedita, iure eveniet recusandae! Fuga asperiores ea, deserunt magnam at exercitationem maxime cum excepturi?.</p>
+          <div class="flex justify-center">
+            <button class="inline-flex text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-sky-700 duration-300 rounded text-lg cursor-none">Download CV</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class=" bg-black text-sky-500 body-font" id="skills">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h2 class="text-xs text-cyan-500 tracking-widest font-medium title-font mb-1">What I Work On !</h2>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-sky-500">My Skills</h1>
+        </div>
+        <div class="flex flex-wrap -m-4 justify-between msbox">
+          <div class="cursor-none rounded-2xl w-96 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300
+           p-4 bg-black border-2 border-sky-500 text-sky-500">
+            <div class="flex rounded-lg h-full bg-black p-8 flex-col">
+              <div class="flex items-center mb-3">
+                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-orange-500 text-sky-500 flex-shrink-0">
+                </div>
+                <h2 class="text-sky-900 text-lg title-font font-medium">HTML</h2>
+              </div>
+              <div class="flex-grow">
+                <p class="leading-relaxed text-base">HTML stands for HyperText Markup Language. It is a standard markup language for web page creation. </p>
+                
+      <div class="w-full mt-4 bg-gray-200 rounded-full dark:bg-gray-700">
+       <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 100%"> 100%</div>
+      </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="cursor-none rounded-2xl w-96 transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300
+          p-4 bg-black border-2 border-sky-500 text-sky-500">
+           <div class="flex rounded-lg h-full bg-black p-8 flex-col">
+             <div class="flex items-center mb-3">
+               <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-cyan-500 text-sky-500 flex-shrink-0">
+               </div>
+               <h2 class="text-sky-900 text-lg title-font font-medium">CSS</h2>
+             </div>
+             <div class="flex-grow">
+               <p class="leading-relaxed text-base">CSS is not technically a necessity, but you probably wouldn’t want to look at a web page withot css.</p>
+               
+     <div class="w-full mt-4 bg-gray-200 rounded-full dark:bg-gray-700">
+      <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 90%"> 90%</div>
+     </div>
+  
+             </div>
+           </div>
+         </div>
+         <div class="cursor-none rounded-2xl w-96 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-gray-900 duration-300
+         p-4 bg-black border-2 border-sky-500 text-sky-500">
+          <div class="flex rounded-lg h-full bg-black p-8 flex-col">
+            <div class="flex items-center mb-3">
+              <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-yellow-500 text-sky-500 flex-shrink-0">
+              </div>
+              <h2 class="text-sky-900 text-lg title-font font-medium">JavaScript</h2>
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base">JavaScript is a dynamic programming language that's used for web development.</p>
+              
+    <div class="w-full mt-4 bg-gray-200 rounded-full dark:bg-gray-700">
+     <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 75%"> 75%</div>
+    </div>
+  
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-sky-500 body-font" id="projects">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-sky-500">Pojects & Portfolio</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-sky-900">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
+      </div>
+      <div class="flex flex-wrap -m- border-2 border-solid rounded-3xl p-8 mt-11 border-sky-500">
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P1.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Landing Page</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Web Designing Company</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P4.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstack Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Resturant</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P3.png">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstack Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Tyre Company</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P2.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstact Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Market Place Company</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P5.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstack Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a website Template Service</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="../P6.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstact Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Travel Agency</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="https://uicookies.com/wp-content/uploads/2018/04/dorne-free-directory-website-templates.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstact Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Marketing Agency</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="https://cdn4.wpbeginner.com/wp-content/uploads/2020/08/ecommercefashion.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstact Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Fashion Site</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 cursor-none">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl" src="https://cdn.dribbble.com/users/1889975/screenshots/14313521/gamezone_4x.png">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-cyan-500 dark:bg-gray-700 rounded-xl opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-cyan-500 mb-1">Fullstact Website</h2>
+              <h1 class="title-font text-lg font-medium text-sky-200 mb-3">For a Gaming Agency</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="text-sky-500 body-font" id="workedwith">
+      <div class="container px-5 py-24 mx-auto flex-col flex">
+        <div class="text-center mb-20">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-sky-500 mb-4">Worked With !</h1>
+          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-sky-900">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
+          <div class="flex mt-6 justify-center">
+            <div class="w-16 h-1 rounded-full bg-cyan-700 inline-flex"></div>
+          </div>
+        </div>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+          <div class="md:w-1/3 flex flex-col text-center items-center border-2 border-solid rounded-3xl p-12 border-green-500 cursor-none border-r-0">
+            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1615915468538-0fbd857888ca?q=80&w=1968&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-full border-2 border-solid border-sky-500">
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-lg title-font font-medium mb-3 text-green-500 mt-3">Cannabis Shop</h2>
+              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            </div>
+          </div>
+          <div class="md:w-1/3 flex flex-col text-center items-center border-2 border-solid rounded-3xl p-12 border-white cursor-none border-l-0 border-r-0">
+            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-full border-2 border-solid border-sky-500">
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-lg title-font font-medium mb-3 text-white mt-3">#slack</h2>
+              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            </div>
+          </div>
+          <div class="md:w-1/3 flex flex-col text-center items-center border-2 border-solid rounded-3xl p-12 border-red-500 cursor-none border-l-0">
+            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1617563844154-4206853f7865?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-full border-2 border-solid border-sky-500">
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-lg title-font font-medium mb-3 text-red-500 mt-3">Santander</h2>
+              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            </div>
+          </div>
+        </div>
+        <button class="flex mx-auto mt-16 text-white bg-sky-600 border-0 py-2 px-6 focus:outline-none hover:bg-sky-700 rounded text-lg cursor-none">Whant to Hire Me ?</button>
+      </div>
+    </section>
+    <section class="text-sky-500 bg-black body-font" id="Testimonials">
+      <div class="container px-5 py-24 mx-auto">
+        <h1 class="text-3xl font-medium title-font text-sky-500 mb-12 text-center">Testimonials</h1>
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 md:w-1/2 w-full">
+            <div class="h-full bg-black p-8 border-2 border-sky-500 rounded-xl hover:dark:bg-gray-900 cursor-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-sky-900 mb-4" viewBox="0 0 975.036 975.036">
+                <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+              </svg>
+              <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
+              <a class="inline-flex items-center">
+                <img alt="testimonial" src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                <span class="flex-grow flex flex-col pl-4">
+                  <span class="title-font font-medium text-sky-400">Aniket Mandal</span>
+                  <span class="text-cyan-700 text-sm">C.E.O the-Q-company</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/2 w-full">
+            <div class="h-full bg-black p-8 border-2 border-sky-500 rounded-xl hover:dark:bg-gray-900 cursor-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-sky-900 mb-4" viewBox="0 0 975.036 975.036">
+                <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+              </svg>
+              <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
+              <a class="inline-flex items-center">
+                <img alt="testimonial" src="../samuel-raita-RiDxDgHg7pw-unsplash.jpg" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                <span class="flex-grow flex flex-col pl-4">
+                  <span class="title-font font-medium text-sky-400">Aditiya Majumdar</span>
+                  <span class="text-cyan-700 text-sm">Vedio Desinger</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-sky-800 body-font relative" id="contact">
+      <div class="container px-5 py-24 mx-auto border-2 border-solid border-sky-500 rounded-3xl">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-sky-500">Contact Me!</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="name" class="leading-7 text-sm text-sky-600">Name</label>
+                <input type="text" id="name" name="name" class="w-full dark:bg-gray-900 bg-opacity-50 rounded border-2 border-sky-500 focus:dark:bg-gray-700 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="relative">
+                <label for="email" class="leading-7 text-sm text-sky-600">Email</label>
+                <input type="email" id="email" name="email" class="w-full dark:bg-gray-900 bg-opacity-50 rounded border-2 border-sky-500 focus:dark:bg-gray-700 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <div class="relative">
+                <label for="message" class="leading-7 text-sm text-sky-600">Message</label>
+                <textarea id="message" name="message" class="w-full dark:bg-gray-900 bg-opacity-50 rounded border-2 border-sky-500 focus:dark:bg-gray-700 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
+              </div>
+            </div>
+            <div class="p-2 w-full">
+              <button class="flex mx-auto text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-sky-700 rounded text-lg mt-4 cursor-none">Send Message</button>
+            </div>
+            <div class="p-2 w-full pt-8 mt-8 border-t border-cyan-500 text-center">
+              <a class="text-cyan-700">alber/notreal@gmail.com</a>
+              <p class="leading-normal my-5 text-sky-900">49 Smith St.
+                <br>Saint Cloud, MN 56301
+              </p>
+              <span class="inline-flex">
+                <div class="p-2 w-80 pt-8 mt-8 border-t border-cyan-500 text-center"></div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-black text-sky-500 body-font" id="links">
+      <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+        <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <span class="text-xl text-sky-500">Albert Dera,</span>
+          </a>
+          <p class="mt-2 text-sm text-sky-700">A Passionate & Professional Full Stack Web-Devloper!</p>
+        </div>
+        <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">Social Media</h2>
+            <nav class="list-none mb-10 cursor-none">
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Instagram</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Youtube</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Facebook</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">X</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 cursor-none">
+            <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">Work Profiles</h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Linkedin</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Sumry</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Jobcase</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Slack</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 cursor-none">
+            <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">Experienced With</h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">the-Q-company</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">W.E.B.C.O.R.E</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Infobath</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Techsis</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 cursor-none">
+            <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">Invested In</h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Tqc.ltd</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Slocky</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">BitNetwork</a>
+              </li>
+              <li>
+                <a class="text-sky-600 hover:text-sky-800">Pi-coin</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="bg-cyan-500">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+          <p class="text-black text-sm text-center sm:text-left">© 2024 Albert Dera —
+            <a href="https://twitter.com/" rel="noopener noreferrer" class="text-gray-900 ml-1" target="_blank">@AlbertDera</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+            <a class="text-black hover:text-gray-800 cursor-none">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-black hover:text-gray-800 cursor-none">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-black hover:text-gray-800 cursor-none">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
+</body>
+</html>
